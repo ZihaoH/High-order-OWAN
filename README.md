@@ -15,4 +15,4 @@ python3 main_all_model.py -g 1 -l 1 -r 16 -m_name 'num1_rank16' -m_id 2
 ``` python
 python3 test.py -m_path './trained_model/best_model.pth.tar' -m_id 2 -l 10 -cn 'moderate'
 ```
-The trained model parameters in "trained_model" are for 3 distortion dataset.
+The trained model parameters in "trained_model" are for 3 distortion dataset. And these two files are all for 2-order H-OWAN which have CP structure, 10 blocks and shares parameters. `./trained_model/best_model.pth.tar` is for `./model/model_2order_ming.py`, and `/trained_model/best_model_function_version.tar` is for `./model/model_2order_test_conv.py`. These two model structures are the same, but the second one uses `tensor1x1_conv.py`. Although the first one also uses tensor 1x1 conv, the tensor 1x1 conv method is not encapsulated as a function. But they do the same performance.
